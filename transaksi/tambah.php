@@ -1,71 +1,84 @@
-<?php
-include "../config/koneksi.php";
+<!DOCTYPE html>
+<html>
+<head>
 
-$buku=mysqli_query($conn,"SELECT * FROM buku");
-$anggota=mysqli_query($conn,"SELECT * FROM anggota");
+<title>Tambah Transaksi</title>
 
-?>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+</head>
+
+<body>
+
+<div class="container mt-5">
 
 <h2>Tambah Transaksi</h2>
 
 <form action="simpan.php" method="POST">
 
-Nama
+<div class="mb-3">
 
-<select name="anggota">
+<label>Nama Anggota</label>
 
-<?php
+<input
+type="text"
+name="nama_anggota"
+class="form-control"
+required>
 
-while($a=mysqli_fetch_array($anggota)){
+</div>
 
-?>
+<div class="mb-3">
 
-<option value="<?= $a['id_anggota']?>">
+<label>Judul Buku</label>
 
-<?= $a['nama']?>
+<input
+type="text"
+name="judul_buku"
+class="form-control"
+required>
 
-</option>
+</div>
 
-<?php } ?>
+<div class="mb-3">
 
-</select>
+<label>Tanggal Pinjam</label>
 
-<br><br>
+<input
+type="date"
+name="pinjam"
+class="form-control"
+required>
 
-Buku
+</div>
 
-<select name="buku">
+<div class="mb-3">
 
-<?php
+<label>Tanggal Kembali</label>
 
-while($b=mysqli_fetch_array($buku)){
+<input
+type="date"
+name="kembali"
+class="form-control"
+required>
 
-?>
+</div>
 
-<option value="<?= $b['id_buku']?>">
+<button class="btn btn-primary">
 
-<?= $b['judul']?>
+Simpan
 
-</option>
+</button>
 
-<?php } ?>
+<a href="index.php" class="btn btn-secondary">
 
-</select>
+Kembali
 
-<br><br>
-
-Tanggal Pinjam
-
-<input type="date" name="pinjam">
-
-<br><br>
-
-Tanggal Kembali
-
-<input type="date" name="kembali">
-
-<br><br>
-
-<input type="submit" value="Simpan">
+</a>
 
 </form>
+
+</div>
+
+</body>
+</html>

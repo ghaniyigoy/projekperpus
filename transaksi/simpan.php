@@ -2,19 +2,35 @@
 
 include "../config/koneksi.php";
 
-$buku=$_POST['buku'];
-$anggota=$_POST['anggota'];
+$nama=$_POST['nama_anggota'];
+
+$buku=$_POST['judul_buku'];
+
 $pinjam=$_POST['pinjam'];
+
 $kembali=$_POST['kembali'];
 
-mysqli_query($conn,"
+mysqli_query($koneksi,"
 INSERT INTO transaksi
-(id_buku,id_anggota,tanggal_pinjam,tanggal_kembali,status)
+(
+nama_anggota,
+judul_buku,
+tanggal_pinjam,
+tanggal_kembali,
+status
+)
 
 VALUES
-('$buku','$anggota','$pinjam','$kembali','Dipinjam')
+(
+'$nama',
+'$buku',
+'$pinjam',
+'$kembali',
+'Dipinjam'
+)
 ");
 
 header("Location:index.php");
+exit;
 
 ?>
