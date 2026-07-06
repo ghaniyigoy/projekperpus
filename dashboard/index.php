@@ -47,12 +47,9 @@ $query_terbaru = mysqli_query($koneksi, "
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css">
 </head>
 <body>
-    <!-- Navbar -->
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
         <div class="container">
-            <a class="navbar-brand" href="#">
-                <i class="bi bi-book"></i> Sistem Perpustakaan
-            </a>
+            <a class="navbar-brand" href="#"><i class="bi bi-book"></i> Sistem Perpustakaan</a>
             <div class="navbar-nav ms-auto">
                 <span class="navbar-text text-white me-3">
                     <i class="bi bi-person-circle"></i> Halo, <?= $_SESSION['username'] ?>
@@ -68,7 +65,6 @@ $query_terbaru = mysqli_query($koneksi, "
         <h2>📊 Dashboard</h2>
         <p class="text-muted">Selamat datang di sistem informasi perpustakaan</p>
 
-        <!-- Kartu Statistik -->
         <div class="row mb-4">
             <div class="col-md-3">
                 <div class="card text-white bg-primary shadow-sm">
@@ -125,7 +121,6 @@ $query_terbaru = mysqli_query($koneksi, "
         </div>
 
         <div class="row">
-            <!-- Grafik -->
             <div class="col-md-8">
                 <div class="card shadow-sm">
                     <div class="card-header bg-white">
@@ -158,7 +153,6 @@ $query_terbaru = mysqli_query($koneksi, "
                 </div>
             </div>
 
-            <!-- Peminjaman Terbaru -->
             <div class="col-md-4">
                 <div class="card shadow-sm">
                     <div class="card-header bg-white">
@@ -188,7 +182,6 @@ $query_terbaru = mysqli_query($koneksi, "
             </div>
         </div>
 
-        <!-- Menu Cepat -->
         <div class="row mt-4">
             <div class="col-md-3">
                 <a href="../buku/index.php" class="text-decoration-none">
