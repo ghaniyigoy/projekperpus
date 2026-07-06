@@ -1,15 +1,12 @@
 <?php
-// Konfigurasi koneksi database
 $host = "localhost";
-$user = "root";
-$pass = "";
-$db   = "perpustakaan";
+$username = "root";
+$password = "";
+$database = "perpustakaan";
 
-// Membuat koneksi
-$conn = mysqli_connect($host, $user, $pass, $db);
+$koneksi = mysqli_connect($host, $username, $password, $database);
 
-// Cek koneksi
-if (!$conn) {
-    die("Koneksi database gagal: " . mysqli_connect_error());
+if (!$koneksi) {
+    die("Koneksi gagal: " . mysqli_connect_error());
 }
 ?>
