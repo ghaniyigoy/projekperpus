@@ -2,13 +2,10 @@
 
 include "../config/koneksi.php";
 
-$nama=$_POST['nama_anggota'];
-
-$buku=$_POST['judul_buku'];
-
-$pinjam=$_POST['pinjam'];
-
-$kembali=$_POST['kembali'];
+$nama = $_POST['nama_anggota'];
+$buku = $_POST['judul_buku'];
+$pinjam = $_POST['pinjam'];
+$kembali = $_POST['kembali'];
 
 mysqli_query($koneksi,"
 INSERT INTO transaksi
