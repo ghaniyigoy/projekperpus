@@ -1,4 +1,6 @@
 <?php
+include "../login/cek_login.php";
+
 include "../config/koneksi.php";
 
 $data = mysqli_query($koneksi,"SELECT * FROM transaksi");
@@ -51,39 +53,38 @@ while($d=mysqli_fetch_array($data))
 
 <td><?= $no++ ?></td>
 
-<td><?= $d['nama_anggota']; ?></td>
+<td><?= htmlspecialchars($d['nama_anggota']); ?></td>
 
-<td><?= $d['judul_buku']; ?></td>
+<td><?= htmlspecialchars($d['judul_buku']); ?></td>
 
-<td><?= $d['tanggal_pinjam']; ?></td>
+<td><?= htmlspecialchars($d['tanggal_pinjam']); ?></td>
 
-<td><?= $d['tanggal_kembali']; ?></td>
+<td><?= htmlspecialchars($d['tanggal_kembali']); ?></td>
 
 <td>
 
 <?php
-
-if($d['status']=="Dipinjam")
-{
+if($d['status']=="Dipinjam") {
     echo "<span class='badge bg-warning text-dark'>Dipinjam</span>";
-}
-else
-{
+} else {
     echo "<span class='badge bg-success'>Dikembalikan</span>";
 }
-
 ?>
 
 </td>
 
 <td>
 
-<a href="kembali.php?id=<?= $d['id_transaksi']; ?>"
+<?php if($d['status']=="Dipinjam") { ?>
+<a href="kembali.php?id=<?= (int)$d['id_transaksi']; ?>"
 class="btn btn-success btn-sm">
 Kembalikan
 </a>
+<?php } else { ?>
+<span class="text-muted">-</span>
+<?php } ?>
 
-<a href="hapus.php?id=<?= $d['id_transaksi']; ?>"
+<a href="hapus.php?id=<?= (int)$d['id_transaksi']; ?>"
 onclick="return confirm('Yakin ingin menghapus?')"
 class="btn btn-danger btn-sm">
 Hapus

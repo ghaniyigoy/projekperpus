@@ -1,4 +1,6 @@
 <?php
+include "../login/cek_login.php";
+
 include "../config/koneksi.php";
 
 $kode_buku = $_POST['kode_buku'];

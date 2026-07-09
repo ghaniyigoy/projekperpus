@@ -1,4 +1,6 @@
 <?php
+include "../login/cek_login.php";
+
 include "../config/koneksi.php";
 
 // Ambil ID dari URL

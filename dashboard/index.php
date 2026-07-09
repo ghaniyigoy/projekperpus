@@ -113,12 +113,12 @@ include "../login/cek_login.php";
             Data Anggota
         </a>
 
-        <a href="#">
+        <a href="../transaksi/index.php">
             <i class="fa-solid fa-right-left"></i>
             Peminjaman
         </a>
 
-        <a href="#">
+        <a href="../laporan/index.php">
             <i class="fa-solid fa-chart-column"></i>
             Laporan
         </a>
@@ -191,9 +191,9 @@ include "../login/cek_login.php";
 
                         <p>Transaksi Buku</p>
 
-                        <button class="btn btn-dark">
-                            Segera Hadir
-                        </button>
+                        <a href="../transaksi/index.php" class="btn btn-dark">
+                            Buka
+                        </a>
 
                     </div>
                 </div>
@@ -211,9 +211,9 @@ include "../login/cek_login.php";
 
                         <p>Statistik Perpustakaan</p>
 
-                        <button class="btn btn-light">
-                            Segera Hadir
-                        </button>
+                        <a href="../laporan/index.php" class="btn btn-light">
+                            Buka
+                        </a>
 
                     </div>
                 </div>

@@ -1,4 +1,6 @@
 <?php
+include "../login/cek_login.php";
+
 include "../config/koneksi.php";
 
 $id = $_POST['id_buku'];
